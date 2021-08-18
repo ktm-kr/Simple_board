@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>MyBoard</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <display-name>action</display-name>
+  <servlet>
+  	<servlet-name>upload</servlet-name>
+  	<servlet-class>action.UploadAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>upload</servlet-name>
+  	<url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>uploadForm</servlet-name>
+  	<servlet-class>action.UploadFormAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>uploadForm</servlet-name>
+  	<url-pattern>/uploadForm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>list</servlet-name>
+  	<servlet-class>action.ListAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>list</servlet-name>
+  	<url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>content</servlet-name>
+  	<servlet-class>action.ContentAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>content</servlet-name>
+  	<url-pattern>/content</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>update</servlet-name>
+  	<servlet-class>action.UpdateAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>update</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>updateForm</servlet-name>
+  	<servlet-class>action.UpdateFormAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>updateForm</servlet-name>
+  	<url-pattern>/updateForm</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>delete</servlet-name>
+  	<servlet-class>action.DeleteAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>delete</servlet-name>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>deleteForm</servlet-name>
+  	<servlet-class>action.DeleteFormAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deleteForm</servlet-name>
+  	<url-pattern>/deleteForm</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>downloadAction</servlet-name>
+  	<servlet-class>file.DownloadAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>downloadAction</servlet-name>
+  	<url-pattern>/downloadAction</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>

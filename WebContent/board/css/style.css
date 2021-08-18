@@ -1,0 +1,37 @@
+.container{
+	text-align: center;
+	width: 900px;
+}
+.upload{
+	text-align: center;
+	width: 900px;
+	margin:0 auto;
+}
+.upload2{
+	width: 500px;
+	margin:0 auto;
+	padding: 5%;
+}
+.content{
+	width: 500px;
+	margin:0 auto;
+	padding: 2%;
+	padding-top: 4%;
+}
+h5{
+	text-align: left;
+}
+.desc{
+	height: 200px;
+	vertical-align : middle;
+}
+.descth{
+	vertical-align : middle;
+}
+.list{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.listContent{
+	width: 350px;
+}

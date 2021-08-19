@@ -1,28 +1,25 @@
 package file;
 
 public class FileDTO {
+	private int fnum;
 	private String fileName;
-	private String fileRealName;
+	
+	public int getFnum() {
+		return fnum;
+	}
+	public void setFnum(int fnum) {
+		this.fnum = fnum;
+	}
 	public String getFileName() {
 		return fileName;
 	}
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	public String getFileRealName() {
-		return fileRealName;
-	}
-	public void setFileRealName(String fileRealName) {
-		this.fileRealName = fileRealName;
-	}
 	
-	public FileDTO() {
-		
-	}
-	public FileDTO(String fileName, String fileRealName) {
+	public FileDTO(int fnum, String fileName) {
+		this.fnum = fnum;
 		this.fileName = fileName;
-		this.fileRealName = fileRealName;
 	}
-	
 	
 }

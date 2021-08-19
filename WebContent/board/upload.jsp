@@ -11,9 +11,9 @@
 <body>
 <div class="upload shadow-lg p-3 mb-5 bg-body rounded mt-5">
 <h1 class="mt-5"><b>파일 올리기</b></h1>
-	<form method="post" action="${pageContext.request.contextPath}/upload">
+	<form method="post" action="${pageContext.request.contextPath}/upload" enctype="multipart/form-data">
 		<div class="upload2 border border-secondary rounded mt-5 mb-5">
-		<input class="form-control" type="file" id="formFile"><br>
+		<input class="form-control" type="file" id="formFile" name="uploadFile"><br>
 		<input type="text" class="form-control" placeholder="작성자 이름" name="writer" ><br>
 		<input type="password" class="form-control" placeholder="비밀번호 (10자 이내)" name="pass"><br>
 		<textarea class="form-control" placeholder="파일 설명(100자 이내)" name="content"></textarea>

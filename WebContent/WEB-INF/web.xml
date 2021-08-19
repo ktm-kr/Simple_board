@@ -10,6 +10,14 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <resource-ref>
+    <description>ConnectionPool</description>
+    <res-ref-name>jdbc/BOARD</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  
   <display-name>action</display-name>
   <servlet>
   	<servlet-name>upload</servlet-name>

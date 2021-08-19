@@ -54,7 +54,7 @@ public class UploadAction extends HttpServlet{
 		String writer = multi.getParameter("writer");
 		String pass = multi.getParameter("pass");
 		int views = 0;
-		System.out.println(content + "" + writer + "" +pass);
+		System.out.println(content + " " + writer + " " +pass);
 		BoardDAO dao = new BoardDAO();
 		BoardDTO info = new BoardDTO(
 				content,

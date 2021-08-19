@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,21 +35,29 @@
 			</tr>
 			</c:forEach>
 		</table>
+		
 		<nav>
+		<fmt:parseNumber var="result" value="${currentPage / block}"
+			    integerOnly="true"/>
+		<c:set var="pageBlock" value="${3}"/>
+	
 			  <ul class="pagination" style="text-align:center;">
-			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Previous">
-			        <span aria-hidden="true">&laquo;</span>
-			      </a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Next">
-			        <span aria-hidden="true">&raquo;</span>
-			      </a>
-			    </li>
+			  
+				    <li class="page-item">
+				      <a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${(endPage - 3)}" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+			   	
+			   	<c:forEach var="i" begin="${startPage }" end="${endPage }">
+			   		<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${i}">${i}</a></li>
+			   	</c:forEach>
+			   	
+				   	<li class="page-item">
+				      <a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${startPage + 3}" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
 			  </ul>
 			</nav>
 	<div class="btn1 mt-5 mb-5">

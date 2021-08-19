@@ -13,6 +13,7 @@
 <div class="container shadow-lg p-3 mb-5 bg-body rounded mt-5">
 	<div class="list">
 		<h1 class="mt-5"><b>자 료 실</b></h1>
+		<h6>( 전체 글 : ${articleCount } )</h6>
 		<table class="table mt-5">
 			<tr class="table-light">
 				<th>번 호</th>
@@ -33,11 +34,27 @@
 			</tr>
 			</c:forEach>
 		</table>
+		<nav>
+			  <ul class="pagination" style="text-align:center;">
+			    <li class="page-item">
+			      <a class="page-link" href="#" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item"><a class="page-link" href="#">2</a></li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="#" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			  </ul>
+			</nav>
 	<div class="btn1 mt-5 mb-5">
-		<button type="button" class="btn btn-outline-secondary" style="text-align: right;" onclick="location.href='${pageContext.request.contextPath}/uploadForm'">글쓰기</button>	
+		<button type="button" class="btn btn-outline-secondary" onclick="location.href='${pageContext.request.contextPath}/uploadForm'">글쓰기</button>	
 	</div>
 	</div>
-
 </div>
 	
 </body>

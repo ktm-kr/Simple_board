@@ -73,26 +73,30 @@ public class BoardDAO {
 		}
 	}
 	
-	public List<BoardDTO> getList(){
+	public List<BoardDTO> getList(int start, int end){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<BoardDTO> list = new ArrayList<>();
+		List<BoardDTO> list = new ArrayList<>(10);
 		
 		try {
 			conn = ConnectionUtil.getConnection();
-			String SQL = "select * from BOARD";
+			String SQL = "select * from (select rownum rnum, board.* from\r\n" + 
+					"(select * from board order by NUM desc) board)\r\n" + 
+					"where rnum >= ? and rnum <=?";
 			pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				BoardDTO dto = new BoardDTO(
-						rs.getInt(1),
-						rs.getString(2),
-						rs.getString(3),
-						rs.getString(4),
-						rs.getInt(5),
-						rs.getDate(6)
+						rs.getInt("num"),
+						rs.getString("content"),
+						rs.getString("writer"),
+						rs.getString("password"),
+						rs.getInt("views"),
+						rs.getDate("regdate")
 						);
 				list.add(dto);
 			}
@@ -226,5 +230,28 @@ public class BoardDAO {
 			if(pstmt != null) try { pstmt.close(); } catch (SQLException e){}
 			if(conn != null) try { conn.close(); } catch (SQLException e){}
 		}
+	}
+	
+	public int articleCount() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int result = -1;
+		try {
+			conn = ConnectionUtil.getConnection();
+			String SQL = "select count(*) from BOARD";
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs != null) try { rs.close(); } catch (SQLException e){}
+			if(pstmt != null) try { pstmt.close(); } catch (SQLException e){}
+			if(conn != null) try { conn.close(); } catch (SQLException e){}
+		}
+		return result;
 	}
 }

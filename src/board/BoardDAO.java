@@ -22,6 +22,34 @@ public class BoardDAO {
 		return instance;
 	}
 	
+	public int getNum(BoardDTO info) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int fnum = 0;
+		try {
+			conn = ConnectionUtil.getConnection();
+			String SQL = "select NUM from BOARD where WRITER=? and PASSWORD=?";
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, info.getWriter());
+			pstmt.setString(2, info.getPass());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				fnum = rs.getInt("NUM");
+				return fnum;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs != null) try { rs.close(); } catch (SQLException e){}
+			if(pstmt != null) try { pstmt.close(); } catch (SQLException e){}
+			if(conn != null) try { conn.close(); } catch (SQLException e){}
+		}
+		
+		return -1;
+	}
+	
 	public void insertBoard(BoardDTO info) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

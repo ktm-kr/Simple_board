@@ -30,7 +30,7 @@
 			</tr>
 			<tr>
 				<th class="table-light">파일</th>
-				<td colspan="4"><a href="${pageContext.request.contextPath}/downloadAction">java.war</a></td>
+				<td colspan="4"><a href="${pageContext.request.contextPath}/downloadAction?fileName=${fileName}">${fileName }</a></td>
 			</tr>
 			
 		</table>

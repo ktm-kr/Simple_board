@@ -19,7 +19,6 @@ public class DownloadAction extends HttpServlet{
 		req.setCharacterEncoding("utf-8");
 		String fileName = req.getParameter("fileName");
 		String root = req.getSession().getServletContext().getRealPath("/");
-		System.out.println("다운로드 하는 경로 : " + root + fileName);
 		String fileRoot = root + "board\\upload\\" + fileName ;
 		String mimeType = getServletContext().getMimeType(fileRoot);
 		

@@ -36,28 +36,23 @@
 			</c:forEach>
 		</table>
 		
-		<nav>
-		<fmt:parseNumber var="result" value="${currentPage / block}"
-			    integerOnly="true"/>
-		<c:set var="pageBlock" value="${3}"/>
-	
+			<nav>
 			  <ul class="pagination" style="text-align:center;">
-			  
-				    <li class="page-item">
-				      <a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${(endPage - 3)}" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-			   	
+				<li class="page-item">
+					<a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${(endPage - countPage)}" aria-label="Previous">
+				    	<span aria-hidden="true">&laquo;</span>
+				    </a>
+				</li>
+				
 			   	<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			   		<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${i}">${i}</a></li>
 			   	</c:forEach>
 			   	
-				   	<li class="page-item">
-				      <a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${startPage + 3}" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
+				<li class="page-item">
+					<a class="page-link" href="${pageContext.request.contextPath}/list?pageNum=${startPage + countPage}" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
 			  </ul>
 			</nav>
 	<div class="btn1 mt-5 mb-5">

@@ -30,6 +30,5 @@ public class ContentAction extends HttpServlet{
 		dao.count(dto.getNum(), dto.getViews()+1);
 		
 		req.getRequestDispatcher("/board/content.jsp").forward(req, resp);
-	
 	}
 }

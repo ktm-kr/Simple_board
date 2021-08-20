@@ -18,7 +18,6 @@ public class ContentAction extends HttpServlet{
 		BoardDAO dao = new BoardDAO();
 		BoardDTO dto = new BoardDTO();
 		dto = dao.getContent(num);
-		
 		FileDAO fdao = new FileDAO();
 		
 		req.setAttribute("num", dto.getNum());
@@ -30,6 +29,5 @@ public class ContentAction extends HttpServlet{
 		dao.count(dto.getNum(), dto.getViews()+1);
 		
 		req.getRequestDispatcher("/board/content.jsp").forward(req, resp);
-	
 	}
 }

@@ -16,7 +16,7 @@
 	<form method="post" action="${pageContext.request.contextPath}/delete">
 		<input type="hidden" class="form-control" value="${num}" name="num">
 		<div class="upload2 border border-secondary rounded mt-5 mb-5">
-		<input type="password" class="form-control" placeholder="비밀번호 (10자 이내)" name="pass" >
+		<input type="text" class="form-control" placeholder="비밀번호 (10자 이내)" name="pass" >
 		<div class="btn1 mt-5">
 			<button type="submit" class="btn btn-outline-secondary" style="text-align: right;">삭제하기</button>	
 			<button type="button" class="btn btn-outline-secondary" style="text-align: right;"onclick="location.href='${pageContext.request.contextPath}/content?num=${num }'">취소</button>	

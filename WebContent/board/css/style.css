@@ -35,3 +35,6 @@ h5{
 .listContent{
 	width: 350px;
 }
+.pagination {
+   justify-content: center;
+}

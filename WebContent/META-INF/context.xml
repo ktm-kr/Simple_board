@@ -6,7 +6,7 @@
 				driverClassName="oracle.jdbc.driver.OracleDriver"
 				type="javax.sql.DataSource"
 				url="jdbc:oracle:thin:@localhost:1521:xe"
-				username="BOARD"
+				username="board"
 				password="1234"
 				maxTotal="50"
 				maxIdle="10"

@@ -18,7 +18,6 @@ public class ContentAction extends HttpServlet{
 		BoardDAO dao = new BoardDAO();
 		BoardDTO dto = new BoardDTO();
 		dto = dao.getContent(num);
-		System.out.println(num);
 		FileDAO fdao = new FileDAO();
 		
 		req.setAttribute("num", dto.getNum());

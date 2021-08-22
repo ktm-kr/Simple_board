@@ -14,12 +14,11 @@
 <div class="container shadow-lg p-3 mb-5 bg-body rounded mt-5">
 	<div class="list">
 		<h1 class="mt-5"><b>자 료 실</b></h1>
-		<h6>( 전체 글 : ${articleCount } )</h6>
+		<h6>( 전체 글  : ${articleCount } )</h6>
 		<table class="table mt-5">
 			<tr class="table-light">
 				<th>번 호</th>
 				<th>파일 내용</th>
-				<th>파일 제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
 				<th>조 회</th>
@@ -28,7 +27,6 @@
 			<tr>
 				<td>${list.num}</td>
 				<td class="listContent"><a href="${pageContext.request.contextPath}/content?num=${list.num}">${list.content }</a></td>
-				<td>파일 명</td>
 				<td>${list.writer }</td>
 				<td>${list.regdate}</td>
 				<td>${list.views }</td>
